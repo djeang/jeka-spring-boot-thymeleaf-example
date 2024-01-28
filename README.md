@@ -5,6 +5,16 @@ are hosted in *jeka-src* dir.
 
 This keeps things simple for simple app, while we can move it to a project structure easily, later on.
 
+Run the app :
+```shell
+jeka self#runJar
+```
+The first launch is longer cause of the initial dependency resolution steps. Next execution are much quicker.
+
+Rerun the jar, after code source change :
+```shell
+jeka -co self#runJar
+```
 
 Original Repo :: https://github.com/bezkoder/spring-boot-thymeleaf-example
 
