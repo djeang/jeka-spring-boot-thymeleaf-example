@@ -1,4 +1,4 @@
-package com.bezkoder.spring.thymeleaf.controller;
+package app.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,14 +12,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.bezkoder.spring.thymeleaf.entity.Tutorial;
-import com.bezkoder.spring.thymeleaf.repository.TutorialRepository;
+import app.entity.Tutorial;
+import app.repository.TutorialRepository;
 
 @Controller
 public class TutorialController {
 
   @Autowired
   private TutorialRepository tutorialRepository;
+
+  @GetMapping("/")
+  public String index() {
+    return "redirect:/tutorials";
+  }
 
   @GetMapping("/tutorials")
   public String getAll(Model model, @Param("keyword") String keyword) {
